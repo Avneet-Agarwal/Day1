@@ -8,10 +8,28 @@
 </head>
 <body>
     <script>
+        let now = new Date();
+        date=now.getDate();
+        day=now.getDay();
+        month=now.getMonth()+1;
+        year=now.getFullYear();
+        const l_o_d = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        
+        name=prompt("Enter Your Name:");
         num1=Number(prompt("Enter Number 1:"));
         num2=Number(prompt("Enter Number 2:"));
         num3=num1+num2;
-        window.alert("The Addition of numbers are :"+num3);
+        num4=num1-num2;
+        num5=num1*num2;
+        num6=num1/num2;
+        document.writeln("Today's Date : "+date+"/"+month+"/"+year);
+        document.writeln("<br> Today's Day : "+l_o_d[day]);
+        document.writeln("<br> The Name that you entered is : "+name);
+        document.writeln("<br> The two numbers are : "+num1+"  "+num2);
+        document.writeln("<br> The Addition of numbers are : "+num3);
+        document.writeln("<br> The Subtraction of numbers are : "+num4);
+        document.writeln("<br> The Multiplication of numbers are : "+num5);
+        document.writeln("<br> The Division of numbers are : "+num6);
     </script>
 </body>
 </html>
