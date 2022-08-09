@@ -52,6 +52,7 @@ header:hover{
 }
 
 .banner{
+    background-repeat: no-repeat;
     background-image: url("bgimage.jpg");
     position: relative;
     justify-content: center;
@@ -60,6 +61,7 @@ header:hover{
     align-items: center;
     height:85vh;
     width:90%;
+    background-size: cover;
 
 }
 .banner h1{
