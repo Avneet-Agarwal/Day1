@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-2</title>
+
+</head>
+<body style="font-size: 40px; color: white;">
+    <script>
+        var ran=(Math.floor(Math.random() * 100)%7);
+        console.log(ran);
+        var i=3;
+        while(i){
+            var give=prompt("Guess A Number (1-7):");
+            --i;
+            if(give==ran) {
+
+                document.body.style.backgroundColor="Green";
+                document.write("<center>Voilaa!! YOU GUESSED CORRECT!! Press F5 to play again !<br>The Number matched "+give+"-"+ran);
+                break;
+            }
+            else{
+                if(i==0){
+                    document.body.style.backgroundColor="Red";
+                    document.write("<center>GAME OVER!! YOU GUESSED WRONG!!<br>The Number was "+ran+"<br> Press F5 key to play again!!");
+                }
+                else{
+                alert("you have "+i+"chances left.");
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
