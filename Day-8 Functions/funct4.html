@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+</head>
+
+<body>
+    <script>
+        //QUESTION 4 :- Write a JavaScript program to create a new string adding "New!" in front of a given String. 
+        //              If the given string begins with "New!" already then return the original string. (Use Functional Approach)
+
+
+        function hey(line) {
+            newline = line.split(" ");
+            if (newline[0] != "New!") {
+                line = 'New! ' + line;
+                return (line);
+
+            }
+            newline.shift();
+            line = newline.join(" ");
+            return line;
+        }
+
+        var myline1 = prompt("Enter Line 1");
+        var myline2 = prompt("Enter Line 2");
+
+        document.write(hey(myline1));
+        document.write("<br><br><br>"+hey(myline2));
+
+    </script>
+
+</body>
+
+</html>
