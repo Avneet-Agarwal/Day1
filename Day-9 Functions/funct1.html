@@ -10,18 +10,20 @@
 
 <body>
     <script>
-        function sum() {
+        function sum(values) {
             var total = 0;
-            var val = arguments;
-            for (x = 0; x < arguments.length; x++) {
-                total = total + arguments[x];
+            var val = values;
+            for (x = 0; x < val.length; x++) {
+                total = total + parseInt(val[x]);
             }
             return total;
         }
 
+        values=prompt("enter values:- ").split(" ");
+        console.log(values);
         document.write("<pre>1. Write a Program to return sum of all Arguments passed to a Function.<br>console.log(add(2, 3))<br>console.log(add(1, 2, 3, 4, 5))</pre>");
-        document.write("<br><br><br>"+sum(2, 3));
-        document.write("<br><br><br>"+sum(1, 2, 3, 4, 5)); 
+        document.write("<br><br><br>"+sum(values));
+        document.write("<br><br><br>"+sum([1, 2, 3, 4, 5])); 
     </script>
 </body>
 
