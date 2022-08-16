@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+</head>
+
+<body>
+    <script>
+        arr1 = [' value 1 ', 'value 2', 'value 3'];
+        Value = prompt("Enter the element to Add: ");
+        pos = prompt("Enter the position where the element to be Added:(maximun 4 posssible) ");
+
+        document.write("<pre>QUESTION 4 :-Write a code to add an Element at a particular List inside an array.<br></pre>");
+        document.write("<br>OLD array is :-<br><pre>" + arr1 + "</pre>");    
+        arr1.splice((pos-1),0,Value);
+        document.write("<br>NEW array is :-<br><pre>" + arr1 + "</pre>");
+    </script>
+
+</body>
+
+</html>
