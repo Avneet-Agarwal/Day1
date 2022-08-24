@@ -74,7 +74,7 @@
             background-color: grey;
             height:30px;
             width: 180px;
-            animation: loader2 2s linear infinite;
+            animation: loader2 6s linear infinite;
         }
         .container span{
             animation: loader3 2s linear infinite;
@@ -93,14 +93,33 @@
 
         @keyframes loader2 {
             0%{
-                transform: scale(1);
+                transform:scale(0); 
+            }
+            12.5%{
+                transform:scale(1);
+            }
+            25%{
+                transform:scale(0);
+            }
+            37.5%{
+                transform:scale(.5);
             }
             50%{
-                transform: scale(0.5);
+                transform:scale(0);
+            }
+            62.5%{
+                transform:scale(.25);
+            }
+            75%{
+                transform:scale(0);
+            }
+            87.5%{
+                transform:scale(.125);
             }
             100%{
-                transform: scale(1);
+                transform:scale(0);
             }
+            
         }
         .container p{margin-top: 5%;
             font-size: 40px;
