@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(347deg, rgba(2, 0, 36, 1) 0%, rgba(255, 0, 0, 1) 75%);
+    display: flex;
+    justify-content: center;
+
+}
+
+form {
+    padding-left: 30px;
+    margin-top: 250px;
+    background-color: black;
+    width: 75%;
+    height: 100vh;
+    border: 5px solid white;
+    box-shadow: -10px -10px 10px black;
+
+}
+
+form h1{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-top: 30px;
+    font-size: 40px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 7px;
+}
+form table{
+    margin: auto;
+    border: 2px solid white;
+
+}
+
+#text{
+    width:400px;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    box-shadow: -3px -3px 11px brown;
+}
+form span{
+    font-size: 18px;
+}
+form #butt1{
+
+    text-transform: uppercase;
+    margin-top: 50px;
+    width: 100px;
+    height: 50px;
+    font-size: 17px;
+    color: red;
+}
+#Lblleft{
+    text-align: right;
+    width: 30%;
+    padding-right:30px ;
+    
+}
+#Lblright{
+
+}
