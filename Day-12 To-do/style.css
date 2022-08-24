@@ -41,4 +41,38 @@ form button:hover {
 }
 
 /* ----------------New List Container----------------- */
+.todo-container{
+  width:25%;
+}
 
+.todo-list{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.todo-listitem{
+  width: 400px;
+  padding: none; 
+  background-color: white;
+
+}
+.txtfld{
+  border: none;
+}
+.check,.trash{
+  padding: 15px;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0px;
+}
+.trash{
+  background-color: red;
+  color: white;
+}
+.check{
+  color:white;
+  background-color: teal;
+}
