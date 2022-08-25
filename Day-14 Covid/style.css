@@ -2,6 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 .container
@@ -22,7 +28,7 @@
     height: 80%;
     width: 70%;
     background-color: #fff;
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
     align-items: center;
     display: flex;
@@ -36,10 +42,11 @@ select option{
     color: black;
 }
 #header{
+    text-decoration: underline ;
     margin: 25px;
-    color:orange;
+    color:white;
+    font: weight 5px;;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 5px 2px 5px;
 }
 #forme{
  display: flex;
@@ -51,6 +58,7 @@ select option{
     justify-content:end;
     width: 100%;
     padding: 10px;
+    font-size: 18px;
 }
 label{
     padding-right: 10px;
@@ -58,6 +66,7 @@ label{
 }
 .h2{
     width: 50%;
+    margin-left: 20px;
 }
 #cn
 {
