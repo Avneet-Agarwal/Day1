@@ -22,12 +22,18 @@
     height: 80%;
     width: 70%;
     background-color: #fff;
-    background-color: rgba(49, 53, 53, 0.5);
+    background-color: rgba(0, 0, 0, 0.384);
     border-radius: 20px;
     align-items: center;
     display: flex;
     flex-direction: column;
 
+}
+select{
+    color: white;
+}
+select option{
+    color: black;
 }
 #header{
     margin: 25px;
