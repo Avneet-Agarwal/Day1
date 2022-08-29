@@ -1,7 +1,16 @@
+// Global Scope
 var bg, bgImage;
 var mario, mario_running;
 var ground;
-
+var brickImage, bricksGroup;
+var coins, coinsGroup;
+var coinScore = 0;
+var coinsound;
+var jumpsound;
+var gamesound;
+var mushwalk;
+var h1=document.getElementById('hi');
+var h2=document.getElementById('hi2');
 // Load Assets
 function preload() {
   bgImage = loadImage("images/bgnew.jpg");
@@ -13,6 +22,22 @@ function preload() {
     "images/mar5.png",
     "images/mar6.png"
   );
+  mushwalk=loadAnimation(
+    "",
+    
+  );
+  brickImage = loadImage("images/brick.png");
+  coinblink= loadAnimation(
+    "images/con1.png",
+    "images/con2.png",
+    "images/con3.png",
+    "images/con4.png",
+    "images/con5.png",
+    "images/con6.png",
+    );
+    coinsound= loadSound('sounds/coinSound.mp3');
+    jumpsound= loadSound('sounds/jump.mp3');
+    //gamesound=loadSound('sounds/');
 }
 
 // create basic Scaleton with their required credentials
@@ -34,6 +59,8 @@ function setup() {
 
   // create Ground
   ground = createSprite(200, 580, 400, 10);
+  bricksGroup = new Group();
+ coinsGroup = new Group();
 }
 
 // Used to redraw the Objects on the canvas
@@ -43,7 +70,12 @@ function draw() {
   if (bg.x < 100) bg.x = bg.width / 4;
 
   // mario Fly
-  if (keyDown("space")) mario.velocityY = -10;
+  if (keyDown("space")){
+
+  mario.velocityY = -10;
+  jumpsound.play();
+
+  }
 
   // add Gravity
   mario.velocityY = mario.velocityY + 0.5;
@@ -52,16 +84,59 @@ function draw() {
   mario.collide(ground);
   ground.visible = false;
 
-  // Redraw Objects
-  drawSprites();
+  // call GenerateBricks
   generateBricks();
 
-
-}
-
-function generateBricks(){
-    if(frameCount%70==0){
-        console.log(frameCount);
+  for (var i = 0; i < bricksGroup.length; i++) {
+    var temp = bricksGroup.get(i);
+    if (mario.isTouching(temp)) {
+      mario.collide(temp);
     }
-    var brick=createSprite(1200,)
+  }
+  for (var i = 0; i < coinsGroup.length; i++) {
+    var temp = coinsGroup.get(i);
+    if (mario.isTouching(temp)) {
+        temp.destroy();
+        coinsound.play();
+        coinScore++;
+        h2.innerText=('Your Total Coins : '+ coinScore);
+        temp= null ;
+    };
+  for (var i=0;i < )  
+  }
+  if (mario.x < 200) {
+    mario.x = 200;
+  }
+  if (mario.y < 50) {
+    mario.y = 50;
+  }
+
+  generateCoins();
+  // Redraw Objects
+  drawSprites();
 }
+
+function generateBricks() {
+    h1.innerText=('Total Score: '+ frameCount);
+  if (frameCount % random(40,90) == 0) {
+
+    var brick = createSprite(1200, 100, 40, 10);
+    brick.y = random(150, 450);
+    brick.addImage(brickImage);
+    brick.scale = 0.5;
+    brick.velocityX = -5;
+    brick.lifetime = 250;
+    bricksGroup.add(brick);
+  }
+}
+function generateCoins(){
+    if (frameCount % 40 == 0) {
+        var coin = createSprite(1200, 100, 40, 10);
+        coin.y = random(50, 450);
+        coin.addAnimation("rotate",coinblink);
+        coin.scale = 0.1;
+        coin.velocityX = -5;
+        coin.lifetime = 250;
+        coinsGroup.add(coin);
+      }
+  };
