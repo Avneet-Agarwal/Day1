@@ -2,7 +2,8 @@
 var canvas=document.getElementById('canvas');
 var bulfire=document.getElementById('bulfire');
 const ctx= canvas.getContext('2d');
-var img=document.getElementById('hi');
+var img =document.getElementById('hi');
+var zomb = document.getElementById('zomb');
 function erase(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 }
@@ -19,10 +20,11 @@ var bullets=[];
 
 ctx.fillStyle='white';
 ctx.strokeStyle='black';
-ctx.drawImage(img,objmain.x,objmain.y,objmain.width,objmain.height);
+ctx.drawImage(img,objmain.x,objmain.y,100,objmain.height);
 function fire(){
     var newbul=[objmain.x,objmain.y];
     bullets.push(newbul);
+    zomb.style.visibility='hidden';
     console.log(bullets);
     //    ctx.fillArc(objmain.x+100,objmain.y,10,0,Math.pi*2);
         
@@ -57,6 +59,8 @@ updbul();
         bullets.shift();
     }
     ctx.drawImage(img,objmain.x,objmain.y,objmain.width,objmain.height);
+    ctx.drawImage(zomb,400,400,50,50);
+
     bullets.forEach(bul => {
         bul[0]+=objmain.change;
     });
