@@ -16,6 +16,11 @@ objmain={
     change:10,
 
 }
+zombie={
+    x:400,
+    y:400
+
+}
 var bullets=[];
 
 ctx.fillStyle='white';
@@ -50,16 +55,26 @@ function update(e){
     }
     
 }
+var h2=document.getElementById('hi2');
+var count=0;
+var coinScore=0;
 
 updbul();
-
+setInterval(() => {
+    count=0;
+    console.log(zombie.x=Math.floor(Math.random()*10000)%700);
+    console.log(zombie.y=Math.floor(Math.random()*10000)%500);
+}, 5000);
  function updbul(){
     erase();
     if (bullets.length>50){
         bullets.shift();
     }
+    
     ctx.drawImage(img,objmain.x,objmain.y,objmain.width,objmain.height);
-    ctx.drawImage(zomb,400,400,50,50);
+    if (count==0){
+        ctx.drawImage(zomb,zombie.x,zombie.y,50,50);
+    }
 
     bullets.forEach(bul => {
         bul[0]+=objmain.change;
@@ -69,6 +84,16 @@ updbul();
         ctx.arc(bull[0]+130,bull[1]+18,5,0,Math.PI*2);
         ctx.stroke();
         ctx.fill();
+    });
+    bullets.forEach(x => {
+        if ((x[0]>zombie.x  && x[0]<(zombie.x+50)) && (x[1]>zombie.y && x[1]<zombie.y+50)){
+            count++;
+            bullets=[];
+            coinScore++;
+            h2.innerText=('Your Total Score : '+ coinScore);
+
+        }
+        
     });
     requestAnimationFrame(updbul);
 }

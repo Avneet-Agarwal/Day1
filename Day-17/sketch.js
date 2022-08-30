@@ -23,7 +23,7 @@ function preload() {
     "images/mar6.png"
   );
   mushwalk=loadAnimation(
-    "",
+    "images/",
     
   );
   brickImage = loadImage("images/brick.png");
@@ -101,9 +101,7 @@ function draw() {
         coinScore++;
         h2.innerText=('Your Total Coins : '+ coinScore);
         temp= null ;
-    };
-  for (var i=0;i < )  
-  }
+    }
   if (mario.x < 200) {
     mario.x = 200;
   }
@@ -139,4 +137,4 @@ function generateCoins(){
         coin.lifetime = 250;
         coinsGroup.add(coin);
       }
-  };
+  }
