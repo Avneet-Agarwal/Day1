@@ -1,6 +1,7 @@
 //selectors
 var canvas=document.getElementById('canvas');
 var bulfire=document.getElementById('bulfire');
+var blast=document.getElementById('blast');
 const ctx= canvas.getContext('2d');
 var img =document.getElementById('hi');
 var zomb = document.getElementById('zomb');
@@ -17,7 +18,7 @@ objmain={
 
 }
 zombie={
-    x:400,
+    x:500,
     y:400
 
 }
@@ -62,9 +63,9 @@ var coinScore=0;
 updbul();
 setInterval(() => {
     count=0;
-    console.log(zombie.x=Math.floor(Math.random()*10000)%700);
-    console.log(zombie.y=Math.floor(Math.random()*10000)%500);
-}, 5000);
+    zombie.y=Math.floor(Math.random()*10000)%500;
+    zombie.x=500;
+}, 4000);
  function updbul(){
     erase();
     if (bullets.length>50){
@@ -81,12 +82,19 @@ setInterval(() => {
     });
     bullets.forEach(bull => {
         ctx.beginPath();
-        ctx.arc(bull[0]+130,bull[1]+18,5,0,Math.PI*2);
+        ctx.arc(bull[0]+80,bull[1]+25,5,0,Math.PI*2);
         ctx.stroke();
         ctx.fill();
     });
+
     bullets.forEach(x => {
-        if ((x[0]>zombie.x  && x[0]<(zombie.x+50)) && (x[1]>zombie.y && x[1]<zombie.y+50)){
+        if ((x[0]==420) && (x[1]>=zombie.y-25 && x[1]<=zombie.y+25)){
+            bulfire.pause();
+            bulfire.currentTime = 0;
+            blast.play();
+            console.log(x[0] + "  " +x[1] + "  " + zombie.x + "  " + zombie.y);
+            zombie.y=0;
+            zombie.x=0;
             count++;
             bullets=[];
             coinScore++;
