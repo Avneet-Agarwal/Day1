@@ -12,7 +12,7 @@ function erase(){
 objmain={
     x:100,
     y:0,
-    height:50,
+    height:100,
     width:100,
     change:10,
 
@@ -28,7 +28,7 @@ ctx.fillStyle='white';
 ctx.strokeStyle='black';
 ctx.drawImage(img,objmain.x,objmain.y,100,objmain.height);
 function fire(){
-    var newbul=[objmain.x,objmain.y];
+    var newbul=[objmain.x,objmain.y+25];
     bullets.push(newbul);
     zomb.style.visibility='hidden';
     console.log(bullets);
@@ -63,7 +63,7 @@ var coinScore=0;
 updbul();
 setInterval(() => {
     count=0;
-    zombie.y=Math.floor(Math.random()*10000)%500;
+    zombie.y=Math.floor(Math.random()*10000)%450;
     zombie.x=500;
 }, 4000);
  function updbul(){
