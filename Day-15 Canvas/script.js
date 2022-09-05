@@ -2,6 +2,7 @@
 var canvas=document.getElementById('canvas');
 var bulfire=document.getElementById('bulfire');
 var blast=document.getElementById('blast');
+var blastgif=document.getElementById('blastgif');
 const ctx= canvas.getContext('2d');
 var img =document.getElementById('hi');
 var zomb = document.getElementById('zomb');
@@ -73,6 +74,7 @@ setInterval(() => {
     }
     
     ctx.drawImage(img,objmain.x,objmain.y,objmain.width,objmain.height);
+
     if (count==0){
         ctx.drawImage(zomb,zombie.x,zombie.y,50,50);
     }
@@ -93,8 +95,9 @@ setInterval(() => {
             bulfire.currentTime = 0;
             blast.play();
             console.log(x[0] + "  " +x[1] + "  " + zombie.x + "  " + zombie.y);
+            ctx.drawImage(blastgif,zombie.x,zombie.y,50,50);
             zombie.y=0;
-            zombie.x=0;
+            zombie.x=0;            
             count++;
             bullets=[];
             coinScore++;
