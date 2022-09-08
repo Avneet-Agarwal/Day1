@@ -9,6 +9,11 @@
 </head>
 <body>
     <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
         #game-container{
             background-color: black;
         }
@@ -21,7 +26,13 @@
             border: 5px solid grey;
             border-radius: 50%;
             border-top: 5px solid white;
-            animation: neemo 5s linear infinite;
+            animation: neemo 3s linear infinite;
+        }
+        #loaderback{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         @keyframes neemo {
             100%{
@@ -30,7 +41,7 @@
         }
     </style>
     <main id ="game-container">
-        <div id="loader"></div>
+        <div id="loaderback"><div id="loader"></div></div>
         <div id="game"></div>
 
     </main>
