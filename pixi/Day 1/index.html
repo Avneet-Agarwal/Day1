@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIXI 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.js" integrity="sha512-XHX32YCocEDCIiENmO7pf91TtRITLfCagN+uLlj9sJ7RUVBHN1JZtlfb02x4OyXfkuQegd1u6i9mzpRMg+w5xw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <style>
+        body{
+            
+            margin:0;
+            padding: 0;
+
+
+        }
+    </style>
+    <script>
+        
+        console.log(`pixi`,PIXI);
+        const game=new PIXI.Application({
+            backgroundColor:0xF9FF30,
+            width:innerWidth,
+            height:innerHeight
+        });
+        console.log(game);
+        document.body.appendChild(game.view);
+        var naam = new PIXI.Text("Avneet Agarwal");
+        naam.x=200;
+        naam.y=200;
+        game.loader.add('car','moon.png');
+        game.loader.add('car2','planet.png');
+        game.loader.load(
+        () => {
+            const car = PIXI.Sprite.from('car');
+            const car2= PIXI.Sprite.from('car2');
+            car.x=100;
+            car.y=200;
+            car2.x=500;
+            car2.y=200;
+
+            game.stage.addChild(car);
+            game.stage.addChild(car2);
+            game.stage.addChild(naam);
+                
+                
+            }
+        );
+        // game.loader.add('car2','planet.png').load(
+        //     () => {
+        //         const car = PIXI.Sprite.from('car2');
+        //         car.x=(innerWidth/2);
+        //         car.y=innerHeight/2;
+        //         car.anchor.set(0.5);
+        //         game.stage.addChild(car);
+                
+                
+        //     }
+        // );
+        
+
+    </script>
+</body>
+</html>
