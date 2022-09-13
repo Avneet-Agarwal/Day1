@@ -17,5 +17,3 @@ console.log(`The result is ${t3.value}`);
 //submit.addEventListener('click',clicked);
 
 submit.addEventListener('clicked',clicked);
-
-
