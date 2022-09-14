@@ -6,6 +6,8 @@ var tnt=document.getElementById('tnt');
 const ctx= canvas.getContext('2d');
 var img =document.getElementById('hi');
 var zomb = document.getElementById('zomb');
+var maindiv = document.getElementsByClassName('maindiv');
+
 function erase(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 }
@@ -23,7 +25,7 @@ zombie={
     y:400
 }
 tant={
-    x:600,
+    x:700,
     y:600
 }
 var bullets=[];
@@ -76,7 +78,7 @@ setInterval(() => {
     counttnt=0;
     tant.y=Math.floor(Math.random()*10000)%450;
     tant.x=500;
-}, 4000);
+}, 2500);
  function updbul(){
     erase();
     if (bullets.length>50){
@@ -118,6 +120,7 @@ setInterval(() => {
 
         }
         if ((x[0]==420) && (x[1]>=tant.y-25 && x[1]<=tant.y+25)){
+            maindiv[0].style.display='flex';
             bulfire.pause();
             bulfire.currentTime = 0;
             tant.y=0;
