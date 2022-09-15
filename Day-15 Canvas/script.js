@@ -103,6 +103,7 @@ setInterval(() => {
             h2.innerText=('Your Total Score : '+ coinScore);
 
         }
+        
     });
     requestAnimationFrame(updbul);
 }
