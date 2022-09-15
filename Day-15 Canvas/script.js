@@ -2,7 +2,6 @@
 var canvas=document.getElementById('canvas');
 var bulfire=document.getElementById('bulfire');
 var blast=document.getElementById('blast');
-var tnt=document.getElementById('tnt');
 const ctx= canvas.getContext('2d');
 var img =document.getElementById('hi');
 var zomb = document.getElementById('zomb');
@@ -21,10 +20,6 @@ objmain={
 zombie={
     x:500,
     y:400
-}
-tant={
-    x:600,
-    y:600
 }
 var bullets=[];
 
@@ -62,7 +57,6 @@ function update(e){
 }
 var h2=document.getElementById('hi2');
 var count=0;
-var counttnt=0;
 var coinScore=0;
 
 updbul();
@@ -72,11 +66,6 @@ setInterval(() => {
     zombie.x=500;
 }, 4000);
 
-setInterval(() => {
-    counttnt=0;
-    tant.y=Math.floor(Math.random()*10000)%450;
-    tant.x=500;
-}, 4000);
  function updbul(){
     erase();
     if (bullets.length>50){
@@ -87,9 +76,6 @@ setInterval(() => {
 
     if (count==0){
         ctx.drawImage(zomb,zombie.x,zombie.y,50,50);
-    }
-    if (counttnt==0){
-        ctx.drawImage(tnt,tant.x,tant.y,20,50);
     }
 
     bullets.forEach(bul => {
@@ -117,17 +103,6 @@ setInterval(() => {
             h2.innerText=('Your Total Score : '+ coinScore);
 
         }
-        if ((x[0]==420) && (x[1]>=tant.y-25 && x[1]<=tant.y+25)){
-            bulfire.pause();
-            bulfire.currentTime = 0;
-            tant.y=0;
-            tant.y=0;
-            counttnt++;
-            bullets=[];
-            h2.innerText=('Your Total Score : '+ coinScore);
-
-        }
-        
     });
     requestAnimationFrame(updbul);
 }
