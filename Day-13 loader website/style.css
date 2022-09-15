@@ -104,8 +104,9 @@ header:hover{
 
 .banner{
     background-repeat: no-repeat;
-    background-image: url("bgimage.jpg");
+    background-color: black;
     position: relative;
+    display: flex;
     justify-content: center;
     margin-top:5vh ;
     margin-left: 5%;
@@ -117,8 +118,8 @@ header:hover{
 }
 .banner h1{
     margin-left: 30px;
-    color: black;
-    top: 20vh;
+    color: white;
+
     position: absolute;
     font-size: 50px;
     margin-bottom: 30px;
@@ -242,10 +243,11 @@ footer{
     left: 97%;
     position: fixed;
     background-color: black;
+    color: white;
     height: 50px;
     width: 50px;
-    background-color: white;
     border-radius: 50%;
+    background-size: cover;
     overflow: hidden;
     align-items:center ;
     justify-content: center;

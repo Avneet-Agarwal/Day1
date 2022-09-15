@@ -26,11 +26,11 @@ function start() {
         setTimeout(() => {
             moles[ran].style.visibility = "hidden";
         }, 1400);
+        mole[ran].onclick=clicked;
     }, 1500);
 
 }
 function clicked() {
     document.getElementById("currentPoint").innerHTML = counter++;
-
-
 }
+
