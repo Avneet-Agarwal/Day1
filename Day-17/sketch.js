@@ -11,8 +11,9 @@ var coinScore = 0;
 var mushObstacleImage, turtleObstacleImage, obstaclesGroup;
 
 var gameState = "PLAY";
-
 var restartImg;
+var h1=document.getElementById('hi');
+var h2=document.getElementById('hi2');
 
 function preload() {
   bgImage = loadImage("images/bgnew.jpg");
@@ -133,6 +134,7 @@ function draw() {
       var temp = coinsGroup.get(i);
       if (temp.isTouching(mario)) {
         coinScore++;
+        h2.innerText=('Your Total Coins : '+ coinScore);
         //Coin Sound
         coinSound.play();
 
@@ -174,10 +176,10 @@ function draw() {
   // Score Card
   textSize(20);
   fill("brown");
-  text("Coins Collected: " + coinScore, 500, 50);
 }
 
 function generateBricks() {
+  h1.innerText=('Total Score: '+ frameCount);
   if (frameCount % 70 === 0) {
     var brick = createSprite(1200, 120, 40, 10);
     brick.y = random(50, 450);
